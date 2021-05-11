@@ -1,10 +1,11 @@
 ﻿using System;
 
+
 namespace c_sharp_playground
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
 
             /****************************************************
@@ -13,15 +14,16 @@ namespace c_sharp_playground
             
              ****************************************************/
 
-            // Strings
-            Console.WriteLine("STRINGS!");
+            // Characters and Strings
+            Console.WriteLine("STRINGS AND THINGS!");
+            char myChar = 'a'; //  can't use double quotes for char
             string firstName = "Slate"; // string
             Console.WriteLine("first name = " + firstName);
             string lastName = "SlamFish"; // another string
             Console.WriteLine("last name = " + lastName);
             string fullName = firstName + " " + lastName; //combined string
             Console.WriteLine("Full Name = " + fullName);
-            
+
             Console.WriteLine(); // empty space in console
 
 
@@ -84,7 +86,7 @@ namespace c_sharp_playground
 
             // Delcare variable but not assigned
             Console.WriteLine("DECLARE VARIABLE BUT NOT ASSIGNED!");
-            string something; 
+            string something;
             // variable now assigned
             something = "Something is assigned";
             Console.WriteLine("The first 'something' = " + something);
@@ -101,6 +103,12 @@ namespace c_sharp_playground
             Console.WriteLine("boolean currently = " + myBoolean);
             myBoolean = false;
             Console.WriteLine("boolean currently = " + myBoolean);
+
+            Console.WriteLine(); // empty space in console
+
+            var typeCasting = new TypeCasting();
+            typeCasting.TypeCastingExamples();
+
         }
     }
 }
