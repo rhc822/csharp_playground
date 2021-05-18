@@ -65,11 +65,11 @@ namespace c_sharp_playground
             Console.WriteLine("DECLARE MANY VARIABLES (OF THE SAME TYPE)!");
             int a = 1, b = 2, c = 3, d = 4, e = 5, f = 6;
             Console.WriteLine("a = " + a);
-            Console.WriteLine("b = ", b);
-            Console.WriteLine("c = ", c);
-            Console.WriteLine("d = ", d);
-            Console.WriteLine("e = ", e);
-            Console.WriteLine("f = ", f);
+            Console.WriteLine("b = " + b);
+            Console.WriteLine("c = " + c);
+            Console.WriteLine("d = " + d);
+            Console.WriteLine("e = " + e);
+            Console.WriteLine("f = " + f);
             Console.WriteLine(a + b + c + d + e + f);
 
             Console.WriteLine(); // empty space in console
