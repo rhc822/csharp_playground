@@ -84,6 +84,12 @@ namespace c_sharp_playground
 
             Console.WriteLine();
 
+            // Logical operators
+            Console.WriteLine("LOGICAL OPERATORS");
+            Console.WriteLine($"Value1 > 100 && Value2 < 500: {_num > 100 && _numConvertToDouble < 500}");
+            Console.WriteLine($"Value1 > 100 || Value2 < 500: {_num > 100 || _numConvertToDouble < 500}");
+            Console.WriteLine($"!(Value1 > 100 && Value2 < 500): {!(_num > 100 && _numConvertToDouble < 500)}");
+
             // Adding a double and an int implicitly converts to double
             Console.WriteLine("IMPLICIT CONVERSION OF ADDING DOUBLE AND INT");
             var result = _numConvertToDouble + _num;

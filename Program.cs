@@ -7,9 +7,9 @@ namespace c_sharp_playground
     {
         static void Main()
         {
-            Console.WriteLine("Enter a value");
+            Console.WriteLine("Enter Value1");
             int value1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter another value");
+            Console.WriteLine("Enter Value2");
             double value2 = Convert.ToDouble(Console.ReadLine());
             Operators Operators = new Operators(value1, value2);
             Operators.OperatorActivelyWorkingOn();
