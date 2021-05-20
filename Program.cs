@@ -12,7 +12,7 @@ namespace c_sharp_playground
             //Console.WriteLine("Enter Value2");
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
-            Strings Strings = new Strings();
+            Strings Strings = new Strings("Hi there! ", "How are you?");
             Strings.StringsActivelyWorkingOn();
 
             // var UserInput = new UserInput();
