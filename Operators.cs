@@ -6,14 +6,14 @@ namespace c_sharp_playground
     class Operators
     {
 
-        public int _num;
-        public double _numConvertToDouble;
+        public int _num1;
+        public int _num2;
 
-        public Operators(int num, double numConvertToDouble)
+        public Operators(int num1, int num2)
         {
 
-            _num = num;
-            _numConvertToDouble = numConvertToDouble;
+            _num1 = num1;
+            _num2 = num2;
 
         }
 
@@ -32,26 +32,27 @@ namespace c_sharp_playground
 
             ****************************************************/
 
-            Console.WriteLine("Numbers Starts with this value: " + _num);
-            _num -= 25;
-            Console.WriteLine("Subtract 25... " + _num);
-            _num *= 3;
-            Console.WriteLine("Multiply by 3... " + _num);
-            Console.WriteLine("Data Type of 'num' is: " + _num.GetTypeCode());
+            Console.WriteLine($"_num1 initial value: {_num1} and initial type: {_num1.GetTypeCode()}");
+            Console.WriteLine($"_num2 initial value: {_num2} and initial type: {_num2.GetTypeCode()}");
+            _num1 -= 25;
+            Console.WriteLine("Subtract 25... " + _num1);
+            _num1 *= 3;
+            Console.WriteLine("Multiply by 3... " + _num1);
+            Console.WriteLine("Data Type of 'num' is: " + _num1.GetTypeCode());
 
 
-            _num /= 7;
-            _numConvertToDouble /= 7;
-            Console.WriteLine("Divide 'num' by 7... " + _num); // Calculator says answer is 53.57142..., but...
-            Console.WriteLine("Data Type of 'num' is: " + _num.GetTypeCode()); // it's interesting keeps it Int32 and rounds down to 53
-            Console.WriteLine("Divide 'numConvertToDouble' by 7... " + _numConvertToDouble); // Same as Calculator
-            Console.WriteLine("Data Type of 'numConvertToDouble' is: " + _numConvertToDouble.GetTypeCode());
+            _num1 /= 7;
+            _num2 /= 7;
+            Console.WriteLine("Divide 'num' by 7... " + _num1); // Calculator says answer is 53.57142..., but...
+            Console.WriteLine("Data Type of 'num' is: " + _num1.GetTypeCode()); // it's interesting keeps it Int32 and rounds down to 53
+            Console.WriteLine("Divide '_num2' by 7... " + _num2); // Same as Calculator
+            Console.WriteLine("Data Type of '_num2' is: " + _num2.GetTypeCode());
 
             Console.WriteLine();
 
             // Modulo
             Console.WriteLine("MODULO");
-            var modulo = _num % 9.99;
+            var modulo = _num1 % 9.99;
             Console.WriteLine(modulo);
             Console.WriteLine(modulo.GetTypeCode());
 
@@ -59,13 +60,13 @@ namespace c_sharp_playground
 
             // Increment/Decrement
             Console.WriteLine("INCREMENT/DECREMENT");
-            _num++;
-            Console.WriteLine((_num)); // Doesn't DISPLAY the increment by one on this line even though it increment
-            _num--;
-            _num--;
-            _num--;
-            _num--;
-            Console.WriteLine((_num));
+            _num1++;
+            Console.WriteLine((_num1)); // Doesn't DISPLAY the increment by one on this line even though it increment
+            _num1--;
+            _num1--;
+            _num1--;
+            _num1--;
+            Console.WriteLine((_num1));
             
             Console.WriteLine();
 
@@ -73,36 +74,22 @@ namespace c_sharp_playground
 
             // Comparison operators
             Console.WriteLine("COMPARISON OPERATORS");
-            Console.WriteLine($"_num initial value: {_num} and initial type: {_num.GetTypeCode()}");
-            Console.WriteLine($"_numConvertToDouble initial value: {_numConvertToDouble} and initial type: {_numConvertToDouble.GetTypeCode()}");
-            Console.WriteLine($"_num == _numConvertToDouble? {_num == _numConvertToDouble}");
-            Console.WriteLine($"_num != _numConvertToDouble? {_num != _numConvertToDouble}");
-            Console.WriteLine($"_num > _numConvertToDouble? {_num > _numConvertToDouble}");
-            Console.WriteLine($"_num < _numConvertToDouble? {_num < _numConvertToDouble}");
-            Console.WriteLine($"_num >= _numConvertToDouble? {_num >= _numConvertToDouble}");
-            Console.WriteLine($"_num <= _numConvertToDouble? {_num <= _numConvertToDouble}");
+            Console.WriteLine($"_num1 == _num2? {_num1 == _num2}");
+            Console.WriteLine($"_num1 != _num2? {_num1 != _num2}");
+            Console.WriteLine($"_num1 > _num2? {_num1 > _num2}");
+            Console.WriteLine($"_num1 < _num2? {_num1 < _num2}");
+            Console.WriteLine($"_num1 >= _num2? {_num1 >= _num2}");
+            Console.WriteLine($"_num1 <= _num2? {_num1 <= _num2}");
 
             Console.WriteLine();
 
             // Logical operators
             Console.WriteLine("LOGICAL OPERATORS");
-            Console.WriteLine($"Value1 > 100 && Value2 < 500: {_num > 100 && _numConvertToDouble < 500}");
-            Console.WriteLine($"Value1 > 100 || Value2 < 500: {_num > 100 || _numConvertToDouble < 500}");
-            Console.WriteLine($"!(Value1 > 100 && Value2 < 500): {!(_num > 100 && _numConvertToDouble < 500)}");
-
-            // Adding a double and an int implicitly converts to double
-            Console.WriteLine("IMPLICIT CONVERSION OF ADDING DOUBLE AND INT");
-            var result = _numConvertToDouble + _num;
-            Console.WriteLine("Data type of 'result' is: " + result.GetTypeCode());
-            Console.WriteLine("Value of 'result' is: " + result);
+            Console.WriteLine($"Value1 > 100 && Value2 < 500: {_num1 > 100 && _num2 < 500}");
+            Console.WriteLine($"Value1 > 100 || Value2 < 500: {_num1 > 100 || _num2 < 500}");
+            Console.WriteLine($"!(Value1 > 100 && Value2 < 500): {!(_num1 > 100 && _num2 < 500)}");
 
             Console.WriteLine();
-
-            // Assigning a string and int to a var variable will coerce to string
-            var result2 = Convert.ToString(_num) + _num;
-            Console.WriteLine("Data Type of 'result2' is: " + result2.GetTypeCode());
-            Console.WriteLine("Value of 'result2' is: " + result2);
-
 
 
         }

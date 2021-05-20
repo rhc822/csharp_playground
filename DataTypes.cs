@@ -104,6 +104,11 @@ namespace c_sharp_playground
             Console.WriteLine("boolean currently = " + myBoolean);
 
             Console.WriteLine(); // empty space in console
+
+            // Assigning a string and int to a var variable will coerce to string
+            var result = Convert.ToString(number) + number;
+            Console.WriteLine("Data Type of 'result2' is: " + result.GetTypeCode());
+            Console.WriteLine("Value of 'result2' is: " + result);
         }
 
     }
