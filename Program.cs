@@ -12,8 +12,8 @@ namespace c_sharp_playground
             Console.WriteLine("Enter Value2");
             double value2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
-            IfElseConditionals IfElseConditionals = new IfElseConditionals(value1, value2);
-            IfElseConditionals.IfElseConditionalsActivelyWorkingOn();
+            WhileLoops WhileLoops = new WhileLoops(value1, value2);
+            WhileLoops.WhileLoopWorkInProgress();
 
             // var UserInput = new UserInput();
             // UserInput.UserInputProgram();
