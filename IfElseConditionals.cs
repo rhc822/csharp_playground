@@ -42,5 +42,23 @@ namespace c_sharp_playground
 
         }
 
+        public void SwitchExamples()
+        {
+            switch (_value1)
+            {
+                case 1:
+                case 2:
+                    Console.WriteLine($"You entered either a one or two.\n"); // Note case 1 will have same output as case 2 because no 'break' in case 1
+                    break;
+                case 3:
+                    Console.WriteLine($"You entered a three.\n");
+                    break;
+                default:
+                    Console.WriteLine($"Hi... This is the default text that is shown if you entered anything other than 1, 2, or 3...\n");
+                    break;
+            }
+            Console.WriteLine("What about the lonely second value you entered? Here it is (using composite formatting! {0})\n", _value2);
+            Console.WriteLine($"And here it is (using string interpolation)! {_value2}");
+        }
     }
 }
