@@ -13,7 +13,7 @@ namespace c_sharp_playground
             double value2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
             WhileLoops WhileLoops = new WhileLoops(value1, value2);
-            WhileLoops.WhileLoopWorkInProgress();
+            WhileLoops.WhileLoopExample();
 
             // var UserInput = new UserInput();
             // UserInput.UserInputProgram();
