@@ -12,8 +12,8 @@ namespace c_sharp_playground
             Console.WriteLine("Enter Value2");
             double value2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine();
-            WhileLoops WhileLoops = new WhileLoops(value1, value2);
-            WhileLoops.WhileLoopExample();
+            ForLoop ForLoop = new ForLoop(value1, value2);
+            ForLoop.ForLoopWIP();
 
             // var UserInput = new UserInput();
             // UserInput.UserInputProgram();
