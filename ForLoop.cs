@@ -27,16 +27,9 @@ namespace c_sharp_playground
             // TODO: when I go through the array chapter, come back here and play with foreach()
             //foreach()
 
-            // "Standard" way handling a for loop using an input value
-            for (double i = _value1; i < 50; i++)
-            {
-                Console.WriteLine($"Value1 is currently {i}");
-                if(i == 34)
-                {
-                    Console.WriteLine("BREAK!");
-                    break;
-                }
-            }
+
+ 
+
         }
         public void ForLoopExamples()
         {
@@ -46,10 +39,31 @@ namespace c_sharp_playground
                 Console.WriteLine($"Value1 is currently {_value1}");
             }
 
+            // "Standard" way handling a for loop using an input value
+            for (double i = _value1; i < 50; i++)
+            {
+                Console.WriteLine($"Value1 is currently {i}");
+            }
+
+            // for loop "continue" and "break"
+            for (double i = _value1; i < 50; i++)
+            {
+                Console.WriteLine($"Value1 is currently {i}");
+                if (i == 34)
+                {
+                    Console.WriteLine("CONTINUE past 34!");
+                    continue;
+                }
+
+                if (i == 45)
+                {
+                    break;
+                }
+            }
+
 
         }
 
+
     }
-
-
 }
