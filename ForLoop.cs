@@ -15,6 +15,7 @@ namespace c_sharp_playground
     {
         public double _value1;
         public double _value2;
+        
 
         public ForLoop(double value1, double value2)
         {
@@ -27,17 +28,18 @@ namespace c_sharp_playground
             // TODO: when I go through the array chapter, come back here and play with foreach()
             //foreach()
 
-
- 
-
-        }
-        public void ForLoopExamples()
-        {
             // An example of assinging variable to itself because for loop requires 1st statement be a variable declaration
             for (_value1 = _value1; _value1 < 50; _value1++)
             {
                 Console.WriteLine($"Value1 is currently {_value1}");
             }
+
+        Console.WriteLine($"Value1 is currently {_value1}");
+
+
+        }
+        public void ForLoopExamples()
+        {
 
             // "Standard" way handling a for loop using an input value
             for (double i = _value1; i < 50; i++)
