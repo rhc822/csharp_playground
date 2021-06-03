@@ -48,5 +48,10 @@ namespace c_sharp_playground
             return $"{firstName} {lastName} is a/an {occupation}";
         }
 
+        public string MethodOverloadingExample(string firstName, string lastName, string occupation, int yearsActive)
+        {
+            return $"{firstName} {lastName} has been a/an {occupation} for {yearsActive} years";
+        }
+
     }
 }

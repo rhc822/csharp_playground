@@ -16,7 +16,7 @@ namespace c_sharp_playground
 
 
             var Methods = new Methods();
-            Console.WriteLine(Methods.MethodOverloadingExample("Chloe", "Pilkerton", "CEO"));
+            Console.WriteLine(Methods.MethodOverloadingExample("Chloe", "Pilkerton", "CEO", 20));
             // Methods.MethodsExample1(test4: 1.234, test3: 21, test: "Bob"); // Named arguemnts enables them to occur in any position in the method call
 
         }
