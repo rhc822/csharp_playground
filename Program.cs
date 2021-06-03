@@ -5,6 +5,7 @@ namespace c_sharp_playground
 {
     class Program
     {
+
         static void Main()
         {
             //Console.WriteLine("Enter Value1");
@@ -13,29 +14,13 @@ namespace c_sharp_playground
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
 
-            // Prompt user if they want to enter value?
 
-            var ArrayTest = new ArrayTest();
-            ArrayTest.ArraysExamples();
-                
-
-            // If yes, add entered value to array
-            // Prompt user if they want to enter a value?
-            // If no, terminate program
-
-
-
-            //ForLoop ForLoop = new ForLoop(value1, value2);
-            //ForLoop.ForLoopWIP();
-
-            // var UserInput = new UserInput();
-            // UserInput.UserInputProgram();
-            //WriteLine("hello");
-            //var dataTypes = new DataTypes();
-            //dataTypes.DataTypeExamples();
-            //var typeCasting = new TypeCasting();
-            //typeCasting.TypeCastingExamples(); 
+            var Methods = new Methods();
+            Console.WriteLine(Methods.MethodOverloadingExample("Chloe", "Pilkerton", "CEO"));
+            // Methods.MethodsExample1(test4: 1.234, test3: 21, test: "Bob"); // Named arguemnts enables them to occur in any position in the method call
 
         }
+
+        
     }
 }
