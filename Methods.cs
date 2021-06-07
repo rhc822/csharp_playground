@@ -6,9 +6,9 @@ namespace c_sharp_playground
 {
     class Methods
     {
-        public void MethodsWIP()
+        static void MethodsWIP()
         {
-            
+            Console.WriteLine("I'm a 'static' method... and I like it.");
         }
 
         public void MethodsExample1(string test, int test2, double test3, string test4 = "default string test") // "optional" parameters must go after required parameters
