@@ -18,7 +18,7 @@ namespace c_sharp_playground
         private string mood;
         public string Mood 
             {
-            set { mood = value; }
+            set { mood = value; } // Must do long-form way for 'set' only
             }
         public void PropertiesWIP()
         {
