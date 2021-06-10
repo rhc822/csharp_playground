@@ -14,10 +14,12 @@ namespace c_sharp_playground
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
 
+            Console.WriteLine("Enter the make of the vehicle");
+            string make = Console.ReadLine();
             Console.WriteLine("Enter the model of the vehicle");
             string model = Console.ReadLine();
-            var myInheritanceExample = new Class_DerivedChild(model);
-            Console.WriteLine($"You have won a {myInheritanceExample.brand} {myInheritanceExample._modelName}");
+            var myInheritanceExample = new Class_DerivedChild(model, make);
+            Console.WriteLine($"You have won a {myInheritanceExample.Make} {myInheritanceExample._modelName}");
             myInheritanceExample.honk();
 
             //Console.WriteLine("Enter a name");

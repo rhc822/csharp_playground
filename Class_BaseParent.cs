@@ -6,7 +6,7 @@ namespace c_sharp_playground
 {
     public class Class_BaseParent
     {
-        public string brand = "Ford";
+        public string Make { get; set; } = "test";
         public void honk()
         {
             Console.WriteLine("HONK!");

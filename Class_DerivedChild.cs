@@ -7,9 +7,10 @@ namespace c_sharp_playground
     public class Class_DerivedChild : Class_BaseParent
     {
         public string _modelName;
-        public Class_DerivedChild(string modelName)
+        public Class_DerivedChild(string modelName, string make)
         {
             _modelName = modelName;
+            base.Make = make;
         }
 
     }
