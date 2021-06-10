@@ -18,9 +18,22 @@ namespace c_sharp_playground
             string make = Console.ReadLine();
             Console.WriteLine("Enter the model of the vehicle");
             string model = Console.ReadLine();
-            var myInheritanceExample = new Class_DerivedChild(model, make);
-            Console.WriteLine($"You have won a {myInheritanceExample.Make} {myInheritanceExample._modelName}");
-            myInheritanceExample.honk();
+            Class_BaseParent myPolymorphismExample1 = new Class_DerivedChild(model, make);
+            Console.WriteLine("Enter ANOTHER vehicle make");
+            make = Console.ReadLine();
+            Console.WriteLine("Enter ANOTHER vehicle model");
+            model = Console.ReadLine();
+            Class_BaseParent myPolymorphismExample2 = new Class_DerivedChild2(model, make);
+            Class_BaseParent myPolymorphismBase = new Class_BaseParent();
+            Class_BaseParent myPolymorhismExample3 = new Class_DerivedChild3(model, make);
+            //Console.WriteLine($"You have won a/an {myPolymorphismExample1.Make} {myPolymorphismExample1._modelName} {myPolymorphismExample1.honk()}\nAND\na/an {myPolymorphismExample2.Make} {myPolymorphismExample2._modelName} {myPolymorphismExample2.honk()}");
+
+            myPolymorphismBase.honk();
+            myPolymorphismExample1.honk();
+            myPolymorphismExample2.honk();
+            myPolymorhismExample3.honk();
+
+
 
             //Console.WriteLine("Enter a name");
             //string firstName = Console.ReadLine();

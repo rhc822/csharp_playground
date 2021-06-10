@@ -13,5 +13,10 @@ namespace c_sharp_playground
             base.Make = make;
         }
 
+        public override void honk()
+        {
+            Console.WriteLine("Vree Vree!");
+        }
+
     }
 }

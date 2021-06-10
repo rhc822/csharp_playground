@@ -7,7 +7,7 @@ namespace c_sharp_playground
     public class Class_BaseParent
     {
         public string Make { get; set; } = "test";
-        public void honk()
+        public virtual void honk()
         {
             Console.WriteLine("HONK!");
         }
