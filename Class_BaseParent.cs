@@ -4,12 +4,9 @@ using System.Text;
 
 namespace c_sharp_playground
 {
-    public class Class_BaseParent
+    public abstract class Class_BaseParent
     {
         public string Make { get; set; } = "test";
-        public virtual void honk()
-        {
-            Console.WriteLine("HONK!");
-        }
+        public abstract void honk();
     }
 }

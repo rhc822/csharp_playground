@@ -14,6 +14,11 @@ namespace c_sharp_playground
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
 
+            // ABSTRACT
+            //var myAbstractClass = new AbstractClass();
+
+
+            // POLYMORPHISM
             Console.WriteLine("Enter the make of the vehicle");
             string make = Console.ReadLine();
             Console.WriteLine("Enter the model of the vehicle");
@@ -24,17 +29,16 @@ namespace c_sharp_playground
             Console.WriteLine("Enter ANOTHER vehicle model");
             model = Console.ReadLine();
             Class_BaseParent myPolymorphismExample2 = new Class_DerivedChild2(model, make);
-            Class_BaseParent myPolymorphismBase = new Class_BaseParent();
+            //Class_BaseParent myPolymorphismBase = new Class_BaseParent();
             Class_BaseParent myPolymorhismExample3 = new Class_DerivedChild3(model, make);
             //Console.WriteLine($"You have won a/an {myPolymorphismExample1.Make} {myPolymorphismExample1._modelName} {myPolymorphismExample1.honk()}\nAND\na/an {myPolymorphismExample2.Make} {myPolymorphismExample2._modelName} {myPolymorphismExample2.honk()}");
-
-            myPolymorphismBase.honk();
+            // myPolymorphismBase.honk();
             myPolymorphismExample1.honk();
             myPolymorphismExample2.honk();
             myPolymorhismExample3.honk();
+            
 
-
-
+            // CLASS PROPERTIES
             //Console.WriteLine("Enter a name");
             //string firstName = Console.ReadLine();
             //Console.WriteLine("Enter an age");
