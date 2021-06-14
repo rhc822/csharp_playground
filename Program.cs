@@ -19,9 +19,11 @@ namespace c_sharp_playground
 
             // ABSTRACT
             //var myAbstractClass = new AbstractClass();
+            Console.WriteLine("Enter the animal name");
+            string animalName = Console.ReadLine();
             Console.WriteLine("Enter the animal sound");
             string animalSound = Console.ReadLine();
-            InterfaceImplementationClass interfaceImplementationClass = new InterfaceImplementationClass(animalSound);
+            InterfaceImplementationClass interfaceImplementationClass = new InterfaceImplementationClass(animalName, animalSound);
             interfaceImplementationClass.animalSound();
 
             // POLYMORPHISM
