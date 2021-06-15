@@ -14,17 +14,23 @@ namespace c_sharp_playground
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
 
-            // INTERFACE
+            // ENUMS
+            EnumTest test = EnumTest.low;
+            Console.WriteLine($"Accessing the enum as it's own 'class': {test}");
+            //EnumTestClass test2 = new EnumTestClass(); // Enums in classes are static and you can't access them through instantiation
+            Console.WriteLine(EnumTestClass.Dates.December); // Must use the whole path to access the 
 
+            // INTERFACE
+            //Console.WriteLine("Enter the animal name");
+            //string animalName = Console.ReadLine();
+            //Console.WriteLine("Enter the animal sound");
+            //string animalSound = Console.ReadLine();
+            //InterfaceImplementationClass interfaceImplementationClass = new InterfaceImplementationClass(animalName, animalSound);
+            //interfaceImplementationClass.animalSound();
 
             // ABSTRACT
             //var myAbstractClass = new AbstractClass();
-            Console.WriteLine("Enter the animal name");
-            string animalName = Console.ReadLine();
-            Console.WriteLine("Enter the animal sound");
-            string animalSound = Console.ReadLine();
-            InterfaceImplementationClass interfaceImplementationClass = new InterfaceImplementationClass(animalName, animalSound);
-            interfaceImplementationClass.animalSound();
+
 
             // POLYMORPHISM
             //Console.WriteLine("Enter the make of the vehicle");
