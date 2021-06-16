@@ -4,7 +4,7 @@ using System.Text;
 
 namespace c_sharp_playground
 {
-    enum EnumTest // 'enum' as it's own type
+    enum EnumTest // enum as it's own class
     {
         low,
         medium,
@@ -13,7 +13,7 @@ namespace c_sharp_playground
 
     public class EnumTestClass
     {
-        public enum Dates
+        public enum Dates // enum within a class
         {
             January,
             February,
@@ -21,9 +21,9 @@ namespace c_sharp_playground
             April,
             May,
             June,
-            July,
+            July = 30, // Assign a value and the remainder follow
             August,
-            Sepetember,
+            September,
             October,
             November,
             December
