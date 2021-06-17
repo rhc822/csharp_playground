@@ -14,24 +14,28 @@ namespace c_sharp_playground
             //double value2 = Convert.ToDouble(Console.ReadLine());
             //Console.WriteLine();
 
+            //FileTest FileTest = new FileTest();
+            //FileTest.FileTestCreation();
+            FileTest.FileFun();
+
             // ENUMS
-            EnumTest test = EnumTest.high; // Assign to variable
+            //EnumTest test = EnumTest.high; // Assign to variable
             //Console.WriteLine($"Accessing the enum as it's own 'class': {test}");
             //Console.WriteLine($"enum value is: {(int) test}\nand it's type is: {test.GetType()}"); // 
             //EnumTestClass test2 = new EnumTestClass(); // Enums in classes are static and you can't access them through instantiation
             //Console.WriteLine($"Accessing the enum inside another class: {(int) EnumTestClass.Dates.June}\nand it's type is: {EnumTestClass.Dates.December.GetTypeCode()}"); // Must use the whole path to access the 
-            switch (test)
-            {
-                case EnumTest.low:
-                    Console.WriteLine("The chlorine levels are low. You're gonna have algae problems brother.");
-                    break;
-                case EnumTest.medium:
-                    Console.WriteLine("The chlorine levels are medium. Have a good time and enjoy the pool. It's fun.");
-                    break;
-                case EnumTest.high:
-                    Console.WriteLine("The chlorine levels are too high. Get out of the pool or you will die!");
-                    break;
-            }
+            //switch (test)
+            //{
+            //    case EnumTest.low:
+            //        Console.WriteLine("The chlorine levels are low. You're gonna have algae problems brother.");
+            //        break;
+            //    case EnumTest.medium:
+            //        Console.WriteLine("The chlorine levels are medium. Have a good time and enjoy the pool. It's fun.");
+            //        break;
+            //    case EnumTest.high:
+            //        Console.WriteLine("The chlorine levels are too high. Get out of the pool or you will die!");
+            //        break;
+            //}
 
 
             // INTERFACE
