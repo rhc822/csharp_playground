@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace c_sharp_playground
 {
@@ -8,15 +9,75 @@ namespace c_sharp_playground
 
         static void Main()
         {
-            //Console.WriteLine("Enter Value1");
-            //double value1 = Convert.ToDouble(Console.ReadLine());
+            
+            // TRY/CATCH FUN!
+            // Throw keyword and custom error
+            Console.WriteLine("Enter Value1");
+            string value1 = Console.ReadLine();
+            checkValue1(value1);
+            static void checkValue1(string value1)
+            {
+                string pattern = "[a-zA-Z]";
+                Regex regex = new Regex(pattern);
+                MatchCollection match = regex.Matches(value1);
+                if (match.Count > 0)
+                {
+                    throw new FormatException("Please, your life depends on you entering a number.");
+                }
+                else
+                {
+                    Convert.ToInt32(value1);
+                }
+            }
+            Console.WriteLine("Enter Value2");
+            string value2 = Console.ReadLine();
+            checkValue2(value2);
+            static void checkValue2(string value2)
+            {
+                string pattern = "[a-zA-Z]";
+                Regex regex = new Regex(pattern);
+                MatchCollection match = regex.Matches(value2);
+                if (match.Count > 0)
+                {
+                    throw new FormatException("Please, your life depends on you entering a number.");
+                }
+                else
+                {
+                    Convert.ToInt32(value2);
+                }
+            }
+
+
+
+            //int value1 = Convert.ToInt32(Console.ReadLine());
+            //if (value1.)
+            //{
+            //    throw new FormatException ("You must enter a number.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("All clear. Enter numbers to your heart's content.");
+            //}
+            //try
+            //{
+            //    double value1 = Convert.ToInt32(Console.ReadLine());
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("This is the 'finally' statement");
+            //}
             //Console.WriteLine("Enter Value2");
-            //double value2 = Convert.ToDouble(Console.ReadLine());
+            //int value2 = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine();
 
+            // FILE TEST
             //FileTest FileTest = new FileTest();
             //FileTest.FileTestCreation();
-            FileTest.FileFun();
+            //FileTest.FileFun();
 
             // ENUMS
             //EnumTest test = EnumTest.high; // Assign to variable
