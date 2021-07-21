@@ -12,12 +12,16 @@ namespace c_sharp_playground
         {
             int[] scores = new int[] { 97, 92, 81, 60 };
 
-            IEnumerable<int> scoreQuery = from score in scores where score > 80 select score;
+            IEnumerable<int> scoreQuery = 
+                from score in scores
+                where score > 80
+                orderby score ascending
+                select score;
 
             foreach (int i in scoreQuery)
             {
 
-                Console.Write(i + " ");
+                Console.Write(i + " \n");
 
             }
 
