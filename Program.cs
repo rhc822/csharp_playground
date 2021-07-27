@@ -13,30 +13,56 @@ namespace c_sharp_playground
 {
     class Program
     {
-        private static readonly HttpClient client = new HttpClient();
-        
-        private static async Task<List<Repository>> ProcessRepositories()
+
+
+// TUTORIAL: MAKE HTTP REQUESTS IN A .NET CONSOLE APP USING C# 
+/********************************
+private static readonly HttpClient client = new HttpClient();
+
+private static async Task<List<Repository>> ProcessRepositories()
+{
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(
+        new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+    client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+    var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
+    var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await streamTask);
+    return repositories;
+}
+*********************************/
+
+
+static async Task Main()
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
-
-            var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
-            var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await streamTask);
-            return repositories;
-            
-
-            // Initial way to get the serialized JSON string
-            //var stringTask = client.GetStringAsync("https://api.github.com/orgs/dotnet/repos");
-
-            //var msg = await stringTask;
-            //Console.WriteLine(msg);
 
 
-        }
-        static async Task Main()
-        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://weatherapi-com.p.rapidapi.com/history.json?q=Nashville&dt=2021-07-26&lang=en&hour=1&end_dt=2021-07-26"),
+                Headers =
+    {
+        { "x-rapidapi-key", "3a62bb364emshfe24fb90cd88c07p1f19bejsn24d536260e98" },
+        { "x-rapidapi-host", "weatherapi-com.p.rapidapi.com" },
+    },
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
+            }
+
+
+
+
+
+
+
+            // TUTORIAL: MAKE HTTP REQUESTS IN A.NET CONSOLE APP USING C# 
+            /*************************
             var repositories = await ProcessRepositories();
 
             foreach (var repo in repositories)
@@ -49,6 +75,7 @@ namespace c_sharp_playground
                 Console.WriteLine(repo.LastPushUtc);
                 Console.WriteLine();
             }
+            ****************************/
 
             // LINQ FUN
             //LINQ.LinqExample();
@@ -192,5 +219,5 @@ namespace c_sharp_playground
         }
 
 
-    }
+}
 }
