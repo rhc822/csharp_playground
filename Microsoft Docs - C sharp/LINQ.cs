@@ -49,7 +49,7 @@ namespace c_sharp_playground
                  .Count();
             Console.WriteLine(highScoreCount);
 
-            // OR Query3 re-written preferably as...
+            // OR Query3 re-written "preferably" as...
 
             IEnumerable<int> highScoresQuery2 =
                 from score in scores
@@ -57,6 +57,19 @@ namespace c_sharp_playground
                 select score;
             int scoreCount = highScoresQuery2.Count();
             Console.WriteLine(scoreCount);
+
+            // Query4
+            IEnumerable<int> scoreQuery =
+                from score in scores
+                where score > 80
+                orderby score descending
+                select score;
+
+            foreach(int testScore in scoreQuery)
+            {
+                Console.WriteLine(testScore);
+            }
+
         } 
     }
 }
