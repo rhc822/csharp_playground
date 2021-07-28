@@ -5,7 +5,13 @@ using System.Text.Json.Serialization;
 
 namespace WebAPIClient
 {
-    class Repository
+    class WeatherAPIRepo
+    {
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+    }
+    
+    class HTTPTutorialRepository
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
