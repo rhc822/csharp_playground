@@ -5,10 +5,10 @@ using System.Text.Json.Serialization;
 
 namespace WebAPIClient
 {
-    class WeatherAPIRepo
+    public class WeatherAPIRepo
     {
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+        [JsonPropertyName("location")]
+        public string Location { get; set; }
     }
     
     class HTTPTutorialRepository
