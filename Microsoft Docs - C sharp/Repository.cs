@@ -7,10 +7,26 @@ namespace WebAPIClient
 {
     public class WeatherAPIRepo
     {
-        [JsonPropertyName("location")]
-        public string Location { get; set; }
+        public Location location { get; set; }
+
     }
-    
+
+
+    public class Location
+    {
+        public string name { get; set; }
+        public string region { get; set; }
+        public string country { get; set; }
+        public float lat { get; set; }
+        public float lon { get; set; }
+        public string tz_id { get; set; }
+        public int localtime_epoch { get; set; }
+        public string localtime { get; set; }
+    }
+
+
+
+  /*  
     class HTTPTutorialRepository
     {
         [JsonPropertyName("name")]
@@ -27,4 +43,8 @@ namespace WebAPIClient
         public DateTime LastPushUtc { get; set; }
         //public DateTime LastPush => LastPushUtc.ToLocalTime();
     }
+   */
+
+
+
 }
