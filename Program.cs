@@ -42,22 +42,29 @@ namespace c_sharp_playground
         //private static async Task<List<WeatherAPIRepo>> ProcessRepositories()
         private static async Task ProcessRepositories()
         {
+            Console.WriteLine("Enter a location");
+            string location = Console.ReadLine();
+            Console.WriteLine("Enter a start date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
+            string startDate = Console.ReadLine();
+            Console.WriteLine("Enter an end date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
+            string endDate = Console.ReadLine();
+
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add( new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("x-rapidapi-key", "3a62bb364emshfe24fb90cd88c07p1f19bejsn24d536260e98");
             client.DefaultRequestHeaders.Add("x-rapidapi-host", "weatherapi-com.p.rapidapi.com");
 
-            var streamTask = client.GetStreamAsync("https://weatherapi-com.p.rapidapi.com/history.json?q=Nashville&dt=2021-07-28&lang=en");
+            var streamTask = client.GetStreamAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
             var repositories = await JsonSerializer.DeserializeAsync<WeatherAPIRepo>(await streamTask);
-            Console.WriteLine(repositories.location);
-            //foreach (var repo in repositories)
-            //    Console.WriteLine(repo.Location);
-            //return repositories;
 
+                    
+            foreach(var a in repositories.forecast.forecastday) { Console.WriteLine(a.day.maxtemp_f); }
+            
+            
 
-            //var stringTask = client.GetStringAsync("https://weatherapi-com.p.rapidapi.com/history.json?q=Nashville&dt=2021-07-26&lang=en&hour=1&end_dt=2021-07-26");
+            //var stringTask = client.GetStringAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
             //var msg = await stringTask;
-            ////Console.WriteLine(msg);
+            //Console.WriteLine(msg);
             //var repositories = JsonSerializer.Deserialize<WeatherAPIRepo>(msg);
             //Console.WriteLine(repositories.location.name);
             //return repositories;
