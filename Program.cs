@@ -43,11 +43,11 @@ namespace c_sharp_playground
         private static async Task ProcessRepositories()
         {
             Console.WriteLine("Enter a location");
-            string location = Console.ReadLine();
-            Console.WriteLine("Enter a start date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
-            string startDate = Console.ReadLine();
-            Console.WriteLine("Enter an end date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
-            string endDate = Console.ReadLine();
+            string location =  Console.ReadLine();
+            //Console.WriteLine("Enter a start date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
+            string startDate = DateTime.Today.ToShortDateString(); // Console.ReadLine();
+            //Console.WriteLine("Enter an end date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
+            string endDate = DateTime.Today.AddDays(-6).ToShortDateString(); // Console.ReadLine();
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
