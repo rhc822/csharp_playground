@@ -6,4 +6,8 @@
     <RootNamespace>c_sharp_playground</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ClassDefinitions\" />
+  </ItemGroup>
+
 </Project>

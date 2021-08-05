@@ -6,125 +6,21 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using WebAPIClient;
+using c_sharp_playground.Models;
 
 
 namespace c_sharp_playground
 {
     class Program
     {
-
-        /********************************
-         * 
-         * TUTORIAL: MAKE HTTP REQUESTS IN A .NET CONSOLE APP USING C# 
-         * https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient
-         * 
-         * 
-        private static readonly HttpClient client = new HttpClient();
-
-        private static async Task<List<HTTPTutorialRepository>> ProcessRepositories()
-        {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
-
-            var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
-            var repositories = await JsonSerializer.DeserializeAsync<List<HTTPTutorialRepository>>(await streamTask);
-            return repositories;
-        }
-        *********************************/
-
-        private static readonly HttpClient client = new HttpClient();
-
-        private static async Task ProcessRepositories()
-        {
-            Console.WriteLine("Enter a location");
-            string location =  Console.ReadLine();
-            string endDate = DateTime.Today.ToString("yyyy-MM-dd");
-            string startDate = DateTime.Today.AddDays(-7).ToString("yyyy-MM-dd");
-
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("x-rapidapi-key", "3a62bb364emshfe24fb90cd88c07p1f19bejsn24d536260e98");
-            client.DefaultRequestHeaders.Add("x-rapidapi-host", "weatherapi-com.p.rapidapi.com");
-
-            var streamTask = client.GetStreamAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
-            var repositories = await JsonSerializer.DeserializeAsync<WeatherAPIRepo>(await streamTask);
-
-                    
-            foreach(var dayObject in repositories.forecast.forecastday) { Console.WriteLine(dayObject.day.maxtemp_f); }
-            
-            
-
-            //var stringTask = client.GetStringAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
-            //var msg = await stringTask;
-            //Console.WriteLine(msg);
-            //var repositories = JsonSerializer.Deserialize<WeatherAPIRepo>(msg);
-            //Console.WriteLine(repositories.location.name);
-            //return repositories;
-        }
-
-
-
-
         public static async Task Main()
         {
+            // Weather API to get past seven day weather
+            await WeatherAPI.GetPastSevenDayWeather();
 
 
-            //var repositories = await ProcessRepositories();
-            await ProcessRepositories();
-
-            //foreach (var repo in repositories)
-            //{
-            //    Console.WriteLine(repo.Name);
-            //}
-
-                //var client = new HttpClient();
-                //var request = new HttpRequestMessage
-                //{
-                //    Method = HttpMethod.Get,
-                //    RequestUri = new Uri("https://weatherapi-com.p.rapidapi.com/history.json?q=Nashville&dt=2021-07-26&lang=en&hour=1&end_dt=2021-07-26"),
-                //    Headers =
-                //    {
-                //        { "x-rapidapi-key", "3a62bb364emshfe24fb90cd88c07p1f19bejsn24d536260e98" },
-                //        { "x-rapidapi-host", "weatherapi-com.p.rapidapi.com" },
-                //    },
-                //};
-                //using (var response = await client.SendAsync(request))
-                ////using (var response = await client.GetStreamAsync(request))
-                //{
-                //    response.EnsureSuccessStatusCode();
-                //    var body = await response.Content.ReadAsStringAsync();
-                //    Console.WriteLine(body);
-
-                //}
-
-
-
-
-
-
-
-                // TUTORIAL: MAKE HTTP REQUESTS IN A.NET CONSOLE APP USING C#
-                // https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient
-                /*************************
-                var repositories = await ProcessRepositories();
-
-                foreach (var repo in repositories)
-                {
-                    Console.WriteLine(repo.Name);
-                    Console.WriteLine(repo.Description);
-                    Console.WriteLine($"GitHub home URL: {repo.GitHubHomeUrl}");
-                    Console.WriteLine($"URL homepage: {repo.Homepage}");
-                    Console.WriteLine($"Watchers: {repo.Watchers}");
-                    Console.WriteLine(repo.LastPushUtc);
-                    Console.WriteLine();
-                }
-                ****************************/
-
-                // LINQ FUN
-                //LINQ.LinqExample();
+            // LINQ FUN
+            //LINQ.LinqExample();
 
                 // TRY/CATCH FUN!
                 // Throw keyword and custom error
