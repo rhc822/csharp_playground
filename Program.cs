@@ -14,8 +14,6 @@ namespace c_sharp_playground
     class Program
     {
 
-
-
         /********************************
          * 
          * TUTORIAL: MAKE HTTP REQUESTS IN A .NET CONSOLE APP USING C# 
@@ -39,15 +37,12 @@ namespace c_sharp_playground
 
         private static readonly HttpClient client = new HttpClient();
 
-        //private static async Task<List<WeatherAPIRepo>> ProcessRepositories()
         private static async Task ProcessRepositories()
         {
             Console.WriteLine("Enter a location");
             string location =  Console.ReadLine();
-            //Console.WriteLine("Enter a start date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
-            string startDate = DateTime.Today.ToShortDateString(); // Console.ReadLine();
-            //Console.WriteLine("Enter an end date (use the YYYY-MM-DD format AND ensure the date is within the last 7 days)");
-            string endDate = DateTime.Today.AddDays(-6).ToShortDateString(); // Console.ReadLine();
+            string endDate = DateTime.Today.ToString("yyyy-MM-dd");
+            string startDate = DateTime.Today.AddDays(-7).ToString("yyyy-MM-dd");
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -58,7 +53,7 @@ namespace c_sharp_playground
             var repositories = await JsonSerializer.DeserializeAsync<WeatherAPIRepo>(await streamTask);
 
                     
-            foreach(var a in repositories.forecast.forecastday) { Console.WriteLine(a.day.maxtemp_f); }
+            foreach(var dayObject in repositories.forecast.forecastday) { Console.WriteLine(dayObject.day.maxtemp_f); }
             
             
 
