@@ -2,16 +2,41 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using c_sharp_playground.Models;
+using System.Threading.Tasks;
 
 namespace c_sharp_playground
 {
     public class LINQ
     {
         
-        public static void LinqExample()
+        public static async Task LinqExample(List<float> temps)
         {
             // Data source
-            int[] scores = new int[] { 97, 92, 81, 60 };
+            //int[] scores = new int[] { 97, 92, 81, 60 };
+            //foreach (float z in temps)
+            //{
+            //    Console.WriteLine(z);
+            //}
+
+            // Query1
+            IEnumerable<float> highTempQuery =
+                from temp in temps
+                where temp > 60
+                orderby temp ascending
+                select temp;
+            foreach (int i in highTempQuery)
+            {
+
+                Console.Write($"{i} {i.GetType()} \n");
+
+            }
+
+
+
+            /*
+
+
 
             // Query1
             IEnumerable<int> highScoreQuery = 
@@ -69,6 +94,12 @@ namespace c_sharp_playground
             {
                 Console.WriteLine(testScore);
             }
+
+
+
+            */
+
+
 
         } 
     }
