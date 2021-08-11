@@ -19,7 +19,7 @@ namespace c_sharp_playground
             var a = await WeatherAPI.GetPastSevenDayWeather();
 
             // LINQ FUN
-            LINQ.LinqExample(a);
+            await LINQ.LinqExample(a);
 
             // TRY/CATCH FUN!
             // Throw keyword and custom error

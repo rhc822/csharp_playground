@@ -13,13 +13,13 @@ namespace c_sharp_playground.Models
     {
         private static readonly HttpClient client = new HttpClient();
 
-        public static async Task<List<float>> GetPastSevenDayWeather()
+        public static async Task<WeatherAPIRepo> GetPastSevenDayWeather()
+        //public static async Task<List<float>> GetPastSevenDayWeather()
         {
             Console.WriteLine("Enter a location");
             string location = Console.ReadLine();
-            string endDate = DateTime.Today.ToString("yyyy-MM-dd");
+            string endDate = DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd");
             string startDate = DateTime.Today.AddDays(-7).ToString("yyyy-MM-dd");
-            List<float> weatherList = new List<float>();
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -29,14 +29,7 @@ namespace c_sharp_playground.Models
             var streamTask = client.GetStreamAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
             var repositories = await JsonSerializer.DeserializeAsync<WeatherAPIRepo>(await streamTask);
 
-            foreach (var dayObject in repositories.forecast.forecastday)
-                {
-                    weatherList.Add(dayObject.day.maxtemp_f);
-                    
-                }
-            return weatherList;
-
-            //{ Console.WriteLine(dayObject.day.maxtemp_f); }
+            return repositories;
 
             /* API CALL, RETURN STRING INSTEAD OF STREAM 
             var stringTask = client.GetStringAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");

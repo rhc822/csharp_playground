@@ -9,15 +9,18 @@ namespace c_sharp_playground
 {
     public class LINQ
     {
-        
-        public static async Task LinqExample(List<float> temps)
+
+        public static async Task LinqExample(WeatherAPIRepo weatherList)
         {
             // Data source
             //int[] scores = new int[] { 97, 92, 81, 60 };
-            //foreach (float z in temps)
-            //{
-            //    Console.WriteLine(z);
-            //}
+
+            List<float> temps = new List<float>();
+            foreach (var i in weatherList.forecast.forecastday)
+            {
+                temps.Add(i.day.maxtemp_f);
+            }
+
 
             // Query1
             IEnumerable<float> highTempQuery =
@@ -25,11 +28,10 @@ namespace c_sharp_playground
                 where temp > 60
                 orderby temp ascending
                 select temp;
+            Console.Write($"High Temps in {weatherList.location.name} over 60 degrees Farenheit for the last seven days were:\n");
             foreach (int i in highTempQuery)
             {
-
-                Console.Write($"{i} {i.GetType()} \n");
-
+                Console.Write($"{weatherList.forecast.forecastday[i].day}{i}\n");
             }
 
 
@@ -101,6 +103,6 @@ namespace c_sharp_playground
 
 
 
-        } 
+        }
     }
 }
