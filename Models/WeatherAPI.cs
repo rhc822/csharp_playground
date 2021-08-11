@@ -46,6 +46,7 @@ namespace c_sharp_playground.Models
         public class WeatherAPIRepo
     {
 
+
         public Location location { get; set; }
         public Forecast forecast { get; set; }
 

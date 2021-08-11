@@ -14,24 +14,23 @@ namespace c_sharp_playground
         {
             // Data source
             //int[] scores = new int[] { 97, 92, 81, 60 };
-
-            List<float> temps = new List<float>();
+            List<WeatherAPIRepo.Forecastday> day = new List<WeatherAPIRepo.Forecastday>();
             foreach (var i in weatherList.forecast.forecastday)
             {
-                temps.Add(i.day.maxtemp_f);
+                day.Add(i);
             }
 
 
             // Query1
-            IEnumerable<float> highTempQuery =
-                from temp in temps
-                where temp > 60
-                orderby temp ascending
+            IEnumerable<WeatherAPIRepo.Forecastday> highTempQuery =
+                from temp in day
+                where temp.day.maxtemp_f >= 70
+                orderby temp.day.maxtemp_f ascending
                 select temp;
-            Console.Write($"High Temps in {weatherList.location.name} over 60 degrees Farenheit for the last seven days were:\n");
-            foreach (int i in highTempQuery)
+            Console.Write($"High Temps in {weatherList.location.name} over 70 degrees Farenheit for the last seven days were:\n");
+            foreach (var i in highTempQuery)
             {
-                Console.Write($"{weatherList.forecast.forecastday[i].day}{i}\n");
+                Console.WriteLine($"{i.date}: {i.day.maxtemp_f}\n");
             }
 
 
