@@ -24,7 +24,7 @@ namespace c_sharp_playground
             // Query1
             IEnumerable<WeatherAPIRepo.Forecastday> highTempQuery =
                 from temp in day
-                where temp.day.maxtemp_f >= 70
+                where temp.day.maxtemp_f >= 90
                 orderby temp.day.maxtemp_f ascending
                 select temp;
             Console.Write($"High Temps in {weatherList.location.name} over 70 degrees Farenheit for the last seven days were:\n");

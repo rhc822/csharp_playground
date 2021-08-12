@@ -17,7 +17,7 @@ namespace c_sharp_playground
         {
             // Weather API to get past seven day weather
             var a = await WeatherAPI.GetPastSevenDayWeather();
-
+            
             // LINQ FUN
             await LINQ.LinqExample(a);
 

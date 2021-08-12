@@ -28,16 +28,15 @@ namespace c_sharp_playground.Models
 
             var streamTask = client.GetStreamAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
             var repositories = await JsonSerializer.DeserializeAsync<WeatherAPIRepo>(await streamTask);
-
             return repositories;
 
-            /* API CALL, RETURN STRING INSTEAD OF STREAM 
-            var stringTask = client.GetStringAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
-            var msg = await stringTask;
-            Console.WriteLine(msg);
-            var repositories = JsonSerializer.Deserialize<WeatherAPIRepo>(msg);
-            Console.WriteLine(repositories.location.name);
-            */
+            // API CALL, RETURN STRING INSTEAD OF STREAM 
+            //var stringTask = client.GetStringAsync($"https://weatherapi-com.p.rapidapi.com/history.json?q={location}&dt={startDate}&lang=en&end_dt={endDate}");
+            //var msg = await stringTask;
+            //Console.WriteLine(msg);
+            //var repositories = JsonSerializer.Deserialize<WeatherAPIRepo>(msg);
+            //Console.WriteLine(repositories.location.name);
+            //return repositories;
 
         }
 
@@ -139,9 +138,9 @@ namespace c_sharp_playground.Models
             public float dewpoint_c { get; set; }
             public float dewpoint_f { get; set; }
             public int will_it_rain { get; set; }
-            public string chance_of_rain { get; set; }
+            public int chance_of_rain { get; set; }
             public int will_it_snow { get; set; }
-            public string chance_of_snow { get; set; }
+            public int chance_of_snow { get; set; }
             public float vis_km { get; set; }
             public float vis_miles { get; set; }
             public float gust_mph { get; set; }
